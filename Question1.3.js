@@ -1,5 +1,5 @@
-var removeDuplicates = function (myArr) {
-    var index = 0;
+const removeDuplicates =  (myArr) => {
+    let index = 0;
     while (index < myArr.length) {
         if (myArr[index] === myArr[index + 1])
             myArr.splice(index + 1, 1);

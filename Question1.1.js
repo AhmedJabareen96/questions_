@@ -1,9 +1,9 @@
 // Reverse a string in place
-var reverseString = function (my_str) {
+const reverseString =  (my_str) => {
     if (my_str === null || my_str === undefined)
         return;
-    var temp = "";
-    var my_str_char = my_str.split("");
+    let temp = "";
+    const my_str_char = my_str.split("");
     for (var i = 0; i < my_str.length / 2; i++) {
         temp = my_str_char[i];
         my_str_char[i] = my_str[my_str.length - i - 1];
@@ -11,5 +11,15 @@ var reverseString = function (my_str) {
     }
     console.log(my_str_char.join(""));
 };
-var io = prompt("Enter a string");
-reverseString(io);
+
+// to get input in Node,js environment
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+readline.question('Enter a string ', (io) => {
+    reverseString(io);
+    readline.close();
+});
+
