@@ -1,4 +1,3 @@
-const readline = require('readline');
 // Reverse a string in place
 var reverseString = function (my_str) {
     if (my_str === null || my_str === undefined)
@@ -12,14 +11,21 @@ var reverseString = function (my_str) {
     }
     console.log(my_str_char.join(""));
 };
-
-// to get input from user in node.js environment
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-
-  rl.question('Please enter a string: ', (userInput) => {
-    reverseString(userInput);
-    rl.close();
-  });
+var getMax = function (myArr) {
+    var max = myArr[0];
+    for (var i = 1; i < myArr.length; i++)
+        if (myArr[i] >= max)
+            max = myArr[i];
+    return max;
+};
+// let io = prompt("Enter a string");
+// reverseString(io);
+var max = 1000;
+var min = -1000;
+var myArr = [];
+for (var i = 0; i < max; i++) {
+    var randomNumber = Math.random() * (max - min) + min;
+    myArr.push(randomNumber);
+}
+// console.log(getMax(myArr) === Math.max(...myArr))
+console.log(myArr);
